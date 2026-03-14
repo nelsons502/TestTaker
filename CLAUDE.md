@@ -18,7 +18,7 @@ TestTaker is a Next.js web app for online test practice (GED, ACT, SAT, AP exams
 ## Common Commands
 
 ```bash
-npm run dev          # Start dev server (localhost:3000)
+npm run dev          # Start dev server (localhost:3333)
 npm run build        # Production build
 npm run lint         # ESLint
 npm run format       # Prettier
