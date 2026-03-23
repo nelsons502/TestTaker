@@ -57,7 +57,7 @@ export default async function TestBrowserPage(props: {
           </p>
         </div>
         <Link
-          href="/"
+          href="/tests/dashboard"
           className="text-sm text-gray-500 hover:text-gray-700"
         >
           Back to Dashboard
@@ -70,7 +70,7 @@ export default async function TestBrowserPage(props: {
           href="/tests"
           className={`rounded-full px-3 py-1 text-sm font-medium ${
             !searchParams.subject
-              ? "bg-blue-600 text-white"
+              ? "bg-teal-600 text-white"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
           }`}
         >
@@ -82,7 +82,7 @@ export default async function TestBrowserPage(props: {
             href={`/tests?subject=${encodeURIComponent(subject)}`}
             className={`rounded-full px-3 py-1 text-sm font-medium ${
               searchParams.subject === subject
-                ? "bg-blue-600 text-white"
+                ? "bg-teal-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             }`}
           >
@@ -102,7 +102,7 @@ export default async function TestBrowserPage(props: {
             <Link
               key={test.id}
               href={`/tests/${test.id}`}
-              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:border-blue-400 hover:shadow"
+              className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:border-teal-400 hover:shadow"
             >
               <div className="flex items-start justify-between">
                 <h2 className="font-semibold text-gray-900">{test.title}</h2>
@@ -112,7 +112,7 @@ export default async function TestBrowserPage(props: {
                   </span>
                 )}
               </div>
-              <span className="mt-1 inline-block rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+              <span className="mt-1 inline-block rounded-full bg-teal-50 px-2 py-0.5 text-xs font-medium text-teal-700">
                 {test.subject}
               </span>
               {test.description && (

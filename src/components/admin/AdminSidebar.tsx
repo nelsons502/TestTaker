@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/tests", label: "Tests" },
-  { href: "/admin/grading", label: "Essay Grading" },
+  { href: "/tests/admin", label: "Dashboard" },
+  { href: "/tests/admin/tests", label: "Tests" },
+  { href: "/tests/admin/grading", label: "Essay Grading" },
 ];
 
 export function AdminSidebar({ fullName }: { fullName: string | null }) {
@@ -15,7 +15,7 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
   return (
     <aside className="flex w-64 flex-col border-r border-gray-200 bg-white">
       <div className="border-b border-gray-200 p-6">
-        <Link href="/admin/tests" className="text-xl font-bold text-gray-900">
+        <Link href="/tests/admin/tests" className="text-xl font-bold text-gray-900">
           TestTaker
         </Link>
         <p className="mt-1 text-sm text-gray-500">Admin Panel</p>
@@ -24,8 +24,8 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
       <nav className="flex-1 space-y-1 p-4">
         {navItems.map((item) => {
           const isActive =
-            item.href === "/admin"
-              ? pathname === "/admin"
+            item.href === "/tests/admin"
+              ? pathname === "/tests/admin"
               : pathname.startsWith(item.href);
           return (
             <Link
@@ -33,7 +33,7 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
               href={item.href}
               className={`block rounded-md px-3 py-2 text-sm font-medium ${
                 isActive
-                  ? "bg-blue-50 text-blue-700"
+                  ? "bg-teal-50 text-teal-700"
                   : "text-gray-700 hover:bg-gray-100"
               }`}
             >
@@ -47,14 +47,12 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
         <p className="truncate text-sm font-medium text-gray-700">
           {fullName || "Admin"}
         </p>
-        <form action="/auth/sign-out" method="POST" className="mt-2">
-          <button
-            type="submit"
-            className="text-sm text-gray-500 hover:text-gray-700"
-          >
-            Sign out
-          </button>
-        </form>
+        <Link
+          href="/auth/sign-out"
+          className="mt-2 block text-sm text-gray-500 hover:text-gray-700"
+        >
+          Sign out
+        </Link>
       </div>
     </aside>
   );

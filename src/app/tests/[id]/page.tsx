@@ -102,7 +102,7 @@ export default async function TestDetailPage(props: {
       )}
 
       <div className="mt-4 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
-        <span className="inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
+        <span className="inline-block rounded-full bg-teal-50 px-2.5 py-0.5 text-xs font-medium text-teal-700">
           {test.subject}
         </span>
         <h1 className="mt-2 text-2xl font-bold">{test.title}</h1>

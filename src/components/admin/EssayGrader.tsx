@@ -66,7 +66,7 @@ export function EssayGrader({ essay }: { essay: EssayData }) {
       </div>
 
       {essay.questionExplanation && (
-        <div className="mt-3 rounded-md bg-blue-50 p-3 text-sm text-blue-700">
+        <div className="mt-3 rounded-md bg-teal-50 p-3 text-sm text-teal-700">
           <span className="font-medium">Rubric:</span>{" "}
           {essay.questionExplanation}
         </div>
@@ -102,7 +102,7 @@ export function EssayGrader({ essay }: { essay: EssayData }) {
                 Math.min(essay.questionPoints, Math.max(0, Number(e.target.value)))
               )
             }
-            className="mt-1 w-24 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 w-24 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
         <div className="flex-1">
@@ -114,7 +114,7 @@ export function EssayGrader({ essay }: { essay: EssayData }) {
             onChange={(e) => setFeedback(e.target.value)}
             rows={2}
             placeholder="Feedback for the student..."
-            className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
         <button

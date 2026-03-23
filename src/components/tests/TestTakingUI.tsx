@@ -176,7 +176,7 @@ export function TestTakingUI({
                 <p
                   className={`mb-2 text-xs font-semibold uppercase tracking-wider ${
                     currentSection === sectionTitle
-                      ? "text-blue-600"
+                      ? "text-teal-600"
                       : "text-gray-400"
                   }`}
                 >
@@ -193,7 +193,7 @@ export function TestTakingUI({
                         onClick={() => setCurrentIndex(idx)}
                         className={`flex h-8 w-8 items-center justify-center rounded text-xs font-medium ${
                           isCurrent
-                            ? "bg-blue-600 text-white"
+                            ? "bg-teal-600 text-white"
                             : isAnswered
                               ? "bg-green-100 text-green-700"
                               : "bg-gray-100 text-gray-500 hover:bg-gray-200"
@@ -238,7 +238,7 @@ export function TestTakingUI({
                         key={opt.id}
                         className={`flex cursor-pointer items-center gap-3 rounded-lg border p-4 transition ${
                           currentAnswer?.selected_option_id === opt.id
-                            ? "border-blue-500 bg-blue-50"
+                            ? "border-teal-500 bg-teal-50"
                             : "border-gray-200 hover:border-gray-300"
                         }`}
                       >
@@ -251,7 +251,7 @@ export function TestTakingUI({
                               selected_option_id: opt.id,
                             })
                           }
-                          className="h-4 w-4 border-gray-300 text-blue-600"
+                          className="h-4 w-4 border-gray-300 text-teal-600"
                         />
                         <span className="text-sm">{opt.content}</span>
                       </label>
@@ -270,7 +270,7 @@ export function TestTakingUI({
                       })
                     }
                     placeholder="Type your answer..."
-                    className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                   />
                 )}
 
@@ -285,7 +285,7 @@ export function TestTakingUI({
                     }
                     rows={10}
                     placeholder="Write your response..."
-                    className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="w-full rounded-md border border-gray-300 px-4 py-3 focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                   />
                 )}
               </div>
@@ -313,7 +313,7 @@ export function TestTakingUI({
                     onClick={() => setCurrentIndex(idx)}
                     className={`h-2.5 w-2.5 rounded-full ${
                       isCurrent
-                        ? "bg-blue-600"
+                        ? "bg-teal-600"
                         : isAnswered
                           ? "bg-green-400"
                           : "bg-gray-300"
@@ -329,7 +329,7 @@ export function TestTakingUI({
                 setCurrentIndex((i) => Math.min(questions.length - 1, i + 1))
               }
               disabled={currentIndex === questions.length - 1}
-              className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-40"
+              className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700 disabled:opacity-40"
             >
               Next
             </button>

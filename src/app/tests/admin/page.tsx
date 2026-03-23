@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
           </p>
         </div>
         <Link
-          href="/admin/grading"
+          href="/tests/admin/grading"
           className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:border-orange-400 hover:shadow"
         >
           <p className="text-sm text-gray-500">Essays to Grade</p>
@@ -117,13 +117,13 @@ export default async function AdminDashboard() {
       {/* Quick links */}
       <div className="mt-6 flex gap-3">
         <Link
-          href="/admin/tests"
-          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          href="/tests/admin/tests"
+          className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
         >
           Manage Tests
         </Link>
         <Link
-          href="/admin/grading"
+          href="/tests/admin/grading"
           className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
           Grade Essays
@@ -197,7 +197,7 @@ export default async function AdminDashboard() {
                     <td className="px-4 py-3 text-sm text-gray-500">
                       {a.submitted_at
                         ? new Date(a.submitted_at).toLocaleDateString()
-                        : "—"}
+                        : "\u2014"}
                     </td>
                   </tr>
                 );

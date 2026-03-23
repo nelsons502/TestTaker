@@ -259,7 +259,7 @@ export default async function ReviewPage(props: {
           </Link>
           <Link
             href="/tests"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
           >
             Browse Tests
           </Link>
@@ -383,7 +383,7 @@ export default async function ReviewPage(props: {
                     <p className="text-gray-400">(no response)</p>
                   )}
                   {r?.feedback && (
-                    <div className="mt-2 rounded-md bg-blue-50 p-3 text-blue-800">
+                    <div className="mt-2 rounded-md bg-teal-50 p-3 text-teal-800">
                       <span className="font-medium">Feedback:</span> {r.feedback}
                     </div>
                   )}
@@ -392,7 +392,7 @@ export default async function ReviewPage(props: {
 
               {/* Explanation */}
               {q.explanation && (
-                <div className="mt-3 rounded-md bg-blue-50 p-3 text-sm text-blue-800">
+                <div className="mt-3 rounded-md bg-teal-50 p-3 text-sm text-teal-800">
                   <span className="font-medium">Explanation:</span>{" "}
                   {q.explanation}
                 </div>

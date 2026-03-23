@@ -43,7 +43,7 @@ export function TestEditForm({
               type="text"
               required
               defaultValue={test.title}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             />
           </div>
           <div>
@@ -55,7 +55,7 @@ export function TestEditForm({
               name="subject"
               required
               defaultValue={test.subject}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="GED Math">GED Math</option>
               <option value="GED Language Arts">GED Language Arts</option>
@@ -81,7 +81,7 @@ export function TestEditForm({
             name="description"
             rows={2}
             defaultValue={test.description ?? ""}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
 
@@ -99,7 +99,7 @@ export function TestEditForm({
               type="number"
               min={1}
               defaultValue={test.time_limit_minutes ?? ""}
-              className="mt-1 block w-48 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-48 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             />
           </div>
 
@@ -109,7 +109,7 @@ export function TestEditForm({
               name="is_public"
               type="checkbox"
               defaultChecked={test.is_public}
-              className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+              className="h-4 w-4 rounded border-gray-300 text-teal-600 focus:ring-teal-500"
             />
             <label htmlFor="is_public" className="text-sm font-medium text-gray-700">
               Public
@@ -127,7 +127,7 @@ export function TestEditForm({
               id="assigned_to"
               name="assigned_to"
               defaultValue={test.assigned_to ?? ""}
-              className="mt-1 block w-48 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-48 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="">Anyone (public)</option>
               {students.map((s) => (
@@ -140,7 +140,7 @@ export function TestEditForm({
 
           <button
             type="submit"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
           >
             Save Changes
           </button>

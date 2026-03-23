@@ -86,7 +86,7 @@ export default async function StudentDashboard() {
       : null;
 
   // Suggested retakes: tests where latest score < 70%
-  const latestByTest = new Map<string, typeof completedAttempts[0]>();
+  const latestByTest = new Map<string, (typeof completedAttempts)[0]>();
   for (const a of completedAttempts) {
     if (!latestByTest.has(a.test_id)) {
       latestByTest.set(a.test_id, a);
@@ -109,26 +109,24 @@ export default async function StudentDashboard() {
         <div className="flex gap-2">
           <Link
             href="/tests"
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
           >
             Browse Tests
           </Link>
           {profile?.role === "admin" && (
             <Link
-              href="/admin/tests"
+              href="/tests/admin/tests"
               className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
               Admin
             </Link>
           )}
-          <form action="/auth/sign-out" method="POST">
-            <button
-              type="submit"
-              className="rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200"
-            >
-              Sign out
-            </button>
-          </form>
+          <Link
+            href="/auth/sign-out"
+            className="rounded-md bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200"
+          >
+            Sign out
+          </Link>
         </div>
       </div>
 
@@ -141,7 +139,7 @@ export default async function StudentDashboard() {
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
           <p className="text-sm text-gray-500">Average Score</p>
           <p className="mt-1 text-3xl font-bold">
-            {avgScore !== null ? `${avgScore}%` : "—"}
+            {avgScore !== null ? `${avgScore}%` : "\u2014"}
           </p>
         </div>
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
@@ -198,7 +196,7 @@ export default async function StudentDashboard() {
                 <Link
                   key={a.test_id}
                   href={`/tests/${a.test_id}`}
-                  className="rounded-lg border border-gray-200 bg-white p-4 hover:border-blue-400 hover:shadow"
+                  className="rounded-lg border border-gray-200 bg-white p-4 hover:border-teal-400 hover:shadow"
                 >
                   <p className="font-medium">{testInfo?.title ?? "Test"}</p>
                   <p className="text-sm text-gray-500">
@@ -219,7 +217,7 @@ export default async function StudentDashboard() {
           <div className="mt-2 rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
             <p className="text-gray-500">
               No completed tests yet.{" "}
-              <Link href="/tests" className="text-blue-600 hover:underline">
+              <Link href="/tests" className="text-teal-600 hover:underline">
                 Browse tests
               </Link>{" "}
               to get started.
@@ -274,12 +272,12 @@ export default async function StudentDashboard() {
                       <td className="px-4 py-3 text-sm text-gray-500">
                         {a.submitted_at
                           ? new Date(a.submitted_at).toLocaleDateString()
-                          : "—"}
+                          : "\u2014"}
                       </td>
                       <td className="px-4 py-3 text-right">
                         <Link
                           href={`/tests/${a.test_id}/review?attempt=${a.id}`}
-                          className="text-sm text-blue-600 hover:underline"
+                          className="text-sm text-teal-600 hover:underline"
                         >
                           Review
                         </Link>

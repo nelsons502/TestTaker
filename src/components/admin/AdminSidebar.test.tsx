@@ -4,7 +4,7 @@ import { AdminSidebar } from "./AdminSidebar";
 
 // Mock next/navigation
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/admin/tests",
+  usePathname: () => "/tests/admin/tests",
 }));
 
 // Mock next/link
@@ -51,12 +51,12 @@ describe("AdminSidebar", () => {
 
   it("has a sign out button", () => {
     render(<AdminSidebar fullName="Test" />);
-    expect(screen.getByRole("button", { name: "Sign out" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Sign out" })).toBeInTheDocument();
   });
 
   it("highlights the active Tests link", () => {
     render(<AdminSidebar fullName="Test" />);
     const testsLink = screen.getByRole("link", { name: "Tests" });
-    expect(testsLink.className).toContain("bg-blue-50");
+    expect(testsLink.className).toContain("bg-teal-50");
   });
 });

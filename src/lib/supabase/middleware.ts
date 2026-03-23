@@ -40,7 +40,7 @@ export async function updateSession(request: NextRequest) {
   // Redirect authenticated users away from auth pages (but allow sign-out)
   if (user && isAuthRoute && !request.nextUrl.pathname.startsWith("/auth/callback") && !request.nextUrl.pathname.startsWith("/auth/sign-out")) {
     const url = request.nextUrl.clone();
-    url.pathname = "/";
+    url.pathname = "/tests/dashboard";
     return NextResponse.redirect(url);
   }
 

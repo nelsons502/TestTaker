@@ -62,7 +62,7 @@ export function QuestionEditor({
   };
 
   return (
-    <div className="rounded-lg border border-blue-200 bg-blue-50 p-4">
+    <div className="rounded-lg border border-teal-200 bg-teal-50 p-4">
       <h4 className="mb-3 font-medium">
         {isEditing ? "Edit Question" : "New Question"}
       </h4>
@@ -79,7 +79,7 @@ export function QuestionEditor({
             <select
               value={questionType}
               onChange={(e) => setQuestionType(e.target.value as QuestionType)}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             >
               <option value="multiple_choice">Multiple Choice</option>
               <option value="true_false">True / False</option>
@@ -99,7 +99,7 @@ export function QuestionEditor({
             required
             rows={2}
             defaultValue={question?.content ?? ""}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             placeholder="Enter the question text..."
           />
         </div>
@@ -114,7 +114,7 @@ export function QuestionEditor({
             type="number"
             min={1}
             defaultValue={question?.points ?? 1}
-            className="mt-1 block w-24 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 block w-24 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
           />
         </div>
 
@@ -142,7 +142,7 @@ export function QuestionEditor({
                         }))
                       );
                     }}
-                    className="h-4 w-4 border-gray-300 text-blue-600 focus:ring-blue-500"
+                    className="h-4 w-4 border-gray-300 text-teal-600 focus:ring-teal-500"
                   />
                   <input
                     type="text"
@@ -154,7 +154,7 @@ export function QuestionEditor({
                     }}
                     required
                     placeholder={`Option ${String.fromCharCode(65 + i)}`}
-                    className="flex-1 rounded-md border border-gray-300 px-3 py-1.5 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    className="flex-1 rounded-md border border-gray-300 px-3 py-1.5 text-sm shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                   />
                   {options.length > 2 && (
                     <button
@@ -181,7 +181,7 @@ export function QuestionEditor({
                 onClick={() =>
                   setOptions([...options, { content: "", isCorrect: false }])
                 }
-                className="mt-2 text-sm text-blue-600 hover:text-blue-800"
+                className="mt-2 text-sm text-teal-600 hover:text-teal-800"
               >
                 + Add Option
               </button>
@@ -203,7 +203,7 @@ export function QuestionEditor({
                   value="true"
                   checked={tfAnswer === "true"}
                   onChange={() => setTfAnswer("true")}
-                  className="h-4 w-4 border-gray-300 text-blue-600"
+                  className="h-4 w-4 border-gray-300 text-teal-600"
                 />
                 <span className="text-sm">True</span>
               </label>
@@ -214,7 +214,7 @@ export function QuestionEditor({
                   value="false"
                   checked={tfAnswer === "false"}
                   onChange={() => setTfAnswer("false")}
-                  className="h-4 w-4 border-gray-300 text-blue-600"
+                  className="h-4 w-4 border-gray-300 text-teal-600"
                 />
                 <span className="text-sm">False</span>
               </label>
@@ -232,7 +232,7 @@ export function QuestionEditor({
               name="accepted_answers"
               rows={3}
               defaultValue={question?.accepted_answers?.join("\n") ?? ""}
-              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
               placeholder={"answer 1\nanswer 2\n..."}
             />
             <p className="mt-1 text-xs text-gray-500">
@@ -257,7 +257,7 @@ export function QuestionEditor({
             name="explanation"
             rows={2}
             defaultValue={question?.explanation ?? ""}
-            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             placeholder="Explain why this is the correct answer..."
           />
         </div>
@@ -265,7 +265,7 @@ export function QuestionEditor({
         <div className="flex gap-2">
           <button
             type="submit"
-            className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+            className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-700"
           >
             {isEditing ? "Update" : "Add Question"}
           </button>

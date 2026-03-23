@@ -5,7 +5,10 @@
       "Bash(npm init:*)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(npx supabase:*)"
+      "Bash(npx supabase:*)",
+      "Bash(cd \"/Users/neon.ls/Desktop/Focus Coding/TestTaker\" && mkdir -p src/app/tests/dashboard src/app/tests/admin/tests/new \"src/app/tests/admin/tests/[id]\" src/app/tests/admin/grading)",
+      "Bash(cd \"/Users/neon.ls/Desktop/Focus Coding/TestTaker\" && cp src/app/dashboard/page.tsx src/app/tests/dashboard/page.tsx && cp src/app/admin/layout.tsx src/app/tests/admin/layout.tsx && cp src/app/admin/page.tsx src/app/tests/admin/page.tsx && cp src/app/admin/tests/page.tsx src/app/tests/admin/tests/page.tsx && cp src/app/admin/tests/new/page.tsx src/app/tests/admin/tests/new/page.tsx && cp \"src/app/admin/tests/[id]/page.tsx\" \"src/app/tests/admin/tests/[id]/page.tsx\" && cp src/app/admin/grading/page.tsx src/app/tests/admin/grading/page.tsx)",
+      "Bash(cd \"/Users/neon.ls/Desktop/Focus Coding/TestTaker\" && rm src/app/page.tsx && rm -rf src/app/auth && rm src/app/actions/auth.ts && rm -rf src/app/dashboard && rm -rf src/app/admin)"
     ]
   }
 }

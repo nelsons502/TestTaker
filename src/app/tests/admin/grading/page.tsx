@@ -5,7 +5,6 @@ export default async function GradingPage() {
   const supabase = await createClient();
 
   // Find essay responses that need grading
-  // We need to join through questions to filter by essay type
   const { data: essayQuestions } = await supabase
     .from("questions")
     .select("id")

@@ -20,7 +20,7 @@ export default async function AdminLayout({
     .eq("id", user.id)
     .single();
 
-  if (profile?.role !== "admin") redirect("/");
+  if (profile?.role !== "admin") redirect("/tests/dashboard");
 
   return (
     <div className="flex min-h-screen">

@@ -39,14 +39,14 @@ export function SectionManager({
         <h2 className="text-xl font-bold">Sections & Questions</h2>
         <button
           onClick={() => setAddingSection(true)}
-          className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+          className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-700"
         >
           Add Section
         </button>
       </div>
 
       {addingSection && (
-        <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
+        <div className="mt-4 rounded-lg border border-teal-200 bg-teal-50 p-4">
           <form
             action={async (formData: FormData) => {
               await createSectionWithId(formData);
@@ -59,19 +59,19 @@ export function SectionManager({
               type="text"
               required
               placeholder="Section title"
-              className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
               autoFocus
             />
             <input
               name="description"
               type="text"
               placeholder="Description (optional)"
-              className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+              className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
             />
             <div className="flex gap-2">
               <button
                 type="submit"
-                className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700"
+                className="rounded-md bg-teal-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-teal-700"
               >
                 Add
               </button>
@@ -125,7 +125,7 @@ export function SectionManager({
                       type="text"
                       defaultValue={section.title}
                       required
-                      className="rounded-md border border-gray-300 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                      className="rounded-md border border-gray-300 px-2 py-1 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                       autoFocus
                     />
                     <input
@@ -133,11 +133,11 @@ export function SectionManager({
                       type="text"
                       defaultValue={section.description ?? ""}
                       placeholder="Description"
-                      className="rounded-md border border-gray-300 px-2 py-1 text-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                      className="rounded-md border border-gray-300 px-2 py-1 text-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500"
                     />
                     <button
                       type="submit"
-                      className="rounded bg-blue-600 px-2 py-1 text-xs font-medium text-white hover:bg-blue-700"
+                      className="rounded bg-teal-600 px-2 py-1 text-xs font-medium text-white hover:bg-teal-700"
                     >
                       Save
                     </button>

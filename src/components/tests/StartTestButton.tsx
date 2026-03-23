@@ -14,7 +14,7 @@ export function StartTestButton({
       <div className="flex gap-3">
         <a
           href={`/tests/${testId}/take?attempt=${inProgressAttemptId}`}
-          className="rounded-md bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700"
+          className="rounded-md bg-orange-500 px-6 py-3 text-sm font-medium text-white hover:bg-orange-600"
         >
           Resume Test
         </a>
@@ -35,7 +35,7 @@ export function StartTestButton({
       onClick={async () => {
         await startAttempt(testId);
       }}
-      className="rounded-md bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700"
+      className="rounded-md bg-orange-500 px-6 py-3 text-sm font-medium text-white hover:bg-orange-600"
     >
       Start Test
     </button>

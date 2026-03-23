@@ -19,8 +19,8 @@ export default async function AdminTestsPage(props: {
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Tests</h1>
         <Link
-          href="/admin/tests/new"
-          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+          href="/tests/admin/tests/new"
+          className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
         >
           Create Test
         </Link>
@@ -63,8 +63,8 @@ export default async function AdminTestsPage(props: {
                 <tr key={test.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4">
                     <Link
-                      href={`/admin/tests/${test.id}`}
-                      className="font-medium text-blue-600 hover:underline"
+                      href={`/tests/admin/tests/${test.id}`}
+                      className="font-medium text-teal-600 hover:underline"
                     >
                       {test.title}
                     </Link>
@@ -91,7 +91,7 @@ export default async function AdminTestsPage(props: {
                   <td className="px-6 py-4 text-right">
                     <div className="flex items-center justify-end gap-2">
                       <Link
-                        href={`/admin/tests/${test.id}`}
+                        href={`/tests/admin/tests/${test.id}`}
                         className="text-sm text-gray-600 hover:text-gray-900"
                       >
                         Edit
