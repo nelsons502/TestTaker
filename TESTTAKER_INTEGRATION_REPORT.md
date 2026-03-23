@@ -220,14 +220,15 @@ You'll be running **two databases**:
 
 Before starting the merge:
 
-- [ ] All routes restructured under `/tests` prefix
-- [ ] Root layout removed; replaced with route group layout
-- [ ] Auth pages removed (will use main site's `/auth/*`)
-- [ ] Supabase client imports use a configurable path (easy to remap)
-- [ ] All internal links use `/tests/...` prefix
-- [ ] Tailwind v4 compatibility verified
-- [ ] No hardcoded env vars
-- [ ] Components organized: shared UI vs. TestTaker-specific
-- [ ] Color scheme updated to match teal/coral design system
-- [ ] Mobile responsiveness verified for test-taking flow
-- [ ] README updated with list of required env vars
+- [x] All routes restructured under `/tests` prefix
+- [x] Root layout marked as dev-only; `tests/layout.tsx` wraps TestTaker UI
+- [x] Auth pages removed (will use main site's `/auth/*`)
+- [x] Supabase client imports use thin wrappers (easy to remap)
+- [x] All internal links use `/tests/...` prefix
+- [x] Tailwind v4 compatibility verified
+- [x] No hardcoded env vars
+- [x] Components organized: `components/tests/` and `components/admin/`
+- [x] Color scheme updated to match teal/coral design system
+- [x] Mobile responsiveness verified for test-taking flow
+- [x] README updated with list of required env vars
+- [x] `.env.example` created

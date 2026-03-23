@@ -1,3 +1,10 @@
+/**
+ * Development-only root layout.
+ *
+ * DELETE THIS FILE during integration into the main site — the host app
+ * provides its own root layout with <html>, <body>, fonts, header/footer.
+ * The TestTaker UI is wrapped by src/app/tests/layout.tsx instead.
+ */
 import type { Metadata } from "next";
 import "./globals.css";
 
