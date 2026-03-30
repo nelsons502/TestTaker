@@ -13,7 +13,7 @@ export function StartTestButton({
     return (
       <div className="flex gap-3">
         <a
-          href={`/tests/${testId}/take?attempt=${inProgressAttemptId}`}
+          href={`/${testId}/take?attempt=${inProgressAttemptId}`}
           className="rounded-md bg-orange-500 px-6 py-3 text-sm font-medium text-white hover:bg-orange-600"
         >
           Resume Test

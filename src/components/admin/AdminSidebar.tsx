@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/tests/admin", label: "Dashboard" },
-  { href: "/tests/admin/tests", label: "Tests" },
-  { href: "/tests/admin/grading", label: "Essay Grading" },
+  { href: "/admin", label: "Dashboard" },
+  { href: "/admin/tests", label: "Tests" },
+  { href: "/admin/grading", label: "Essay Grading" },
 ];
 
 export function AdminSidebar({ fullName }: { fullName: string | null }) {
@@ -15,7 +15,7 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
   return (
     <aside className="flex w-64 flex-col border-r border-gray-200 bg-white">
       <div className="border-b border-gray-200 p-6">
-        <Link href="/tests/admin/tests" className="text-xl font-bold text-gray-900">
+        <Link href="/admin/tests" className="text-xl font-bold text-gray-900">
           TestTaker
         </Link>
         <p className="mt-1 text-sm text-gray-500">Admin Panel</p>
@@ -24,8 +24,8 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
       <nav className="flex-1 space-y-1 p-4">
         {navItems.map((item) => {
           const isActive =
-            item.href === "/tests/admin"
-              ? pathname === "/tests/admin"
+            item.href === "/admin"
+              ? pathname === "/admin"
               : pathname.startsWith(item.href);
           return (
             <Link

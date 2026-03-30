@@ -11,7 +11,7 @@ export default async function TakeTestPage(props: {
   const supabase = await createClient();
 
   if (!searchParams.attempt) {
-    redirect(`/tests/${params.id}`);
+    redirect(`/${params.id}`);
   }
 
   const attemptId = searchParams.attempt;
@@ -30,7 +30,7 @@ export default async function TakeTestPage(props: {
 
   if (!attempt) notFound();
   if (attempt.status !== "in_progress") {
-    redirect(`/tests/${params.id}/review?attempt=${attemptId}`);
+    redirect(`/${params.id}/review?attempt=${attemptId}`);
   }
 
   const { data: test } = await supabase

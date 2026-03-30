@@ -25,12 +25,12 @@ export async function createTest(formData: FormData) {
 
   if (error) {
     redirect(
-      `/tests/admin/tests/new?error=${encodeURIComponent(error.message)}`
+      `/admin/tests/new?error=${encodeURIComponent(error.message)}`
     );
   }
 
-  revalidatePath("/tests/admin/tests");
-  redirect(`/tests/admin/tests/${data.id}`);
+  revalidatePath("/admin/tests");
+  redirect(`/admin/tests/${data.id}`);
 }
 
 export async function updateTest(testId: string, formData: FormData) {
@@ -53,13 +53,13 @@ export async function updateTest(testId: string, formData: FormData) {
 
   if (error) {
     redirect(
-      `/tests/admin/tests/${testId}?error=${encodeURIComponent(error.message)}`
+      `/admin/tests/${testId}?error=${encodeURIComponent(error.message)}`
     );
   }
 
-  revalidatePath(`/tests/admin/tests/${testId}`);
-  revalidatePath("/tests/admin/tests");
-  redirect(`/tests/admin/tests/${testId}`);
+  revalidatePath(`/admin/tests/${testId}`);
+  revalidatePath("/admin/tests");
+  redirect(`/admin/tests/${testId}`);
 }
 
 export async function deleteTest(testId: string) {
@@ -69,10 +69,10 @@ export async function deleteTest(testId: string) {
 
   if (error) {
     redirect(
-      `/tests/admin/tests?error=${encodeURIComponent(error.message)}`
+      `/admin/tests?error=${encodeURIComponent(error.message)}`
     );
   }
 
-  revalidatePath("/tests/admin/tests");
-  redirect("/tests/admin/tests");
+  revalidatePath("/admin/tests");
+  redirect("/admin/tests");
 }

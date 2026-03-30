@@ -11,7 +11,7 @@ export default async function ReviewPage(props: {
   const supabase = await createClient();
 
   if (!searchParams.attempt) {
-    redirect(`/tests/${params.id}`);
+    redirect(`/${params.id}`);
   }
 
   const attemptId = searchParams.attempt;
@@ -31,7 +31,7 @@ export default async function ReviewPage(props: {
 
   if (!attempt) notFound();
   if (attempt.status === "in_progress") {
-    redirect(`/tests/${params.id}/take?attempt=${attemptId}`);
+    redirect(`/${params.id}/take?attempt=${attemptId}`);
   }
 
   // Fetch test
@@ -186,7 +186,7 @@ export default async function ReviewPage(props: {
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <Link
-        href={`/tests/${params.id}`}
+        href={`/${params.id}`}
         className="text-sm text-gray-500 hover:text-gray-700"
       >
         &larr; Back to Test
@@ -252,13 +252,13 @@ export default async function ReviewPage(props: {
 
         <div className="mt-6 flex justify-center gap-3">
           <Link
-            href={`/tests/${params.id}`}
+            href={`/${params.id}`}
             className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
           >
             Try Again
           </Link>
           <Link
-            href="/tests"
+            href="/"
             className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
           >
             Browse Tests

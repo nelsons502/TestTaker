@@ -108,14 +108,14 @@ export default async function StudentDashboard() {
         </div>
         <div className="flex gap-2">
           <Link
-            href="/tests"
+            href="/"
             className="rounded-md bg-teal-600 px-4 py-2 text-sm font-medium text-white hover:bg-teal-700"
           >
             Browse Tests
           </Link>
           {profile?.role === "admin" && (
             <Link
-              href="/tests/admin/tests"
+              href="/admin/tests"
               className="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
             >
               Admin
@@ -160,7 +160,7 @@ export default async function StudentDashboard() {
               return (
                 <Link
                   key={a.id}
-                  href={`/tests/${a.test_id}/take?attempt=${a.id}`}
+                  href={`/${a.test_id}/take?attempt=${a.id}`}
                   className="flex items-center justify-between rounded-lg border border-yellow-200 bg-yellow-50 p-4 hover:bg-yellow-100"
                 >
                   <div>
@@ -195,7 +195,7 @@ export default async function StudentDashboard() {
               return (
                 <Link
                   key={a.test_id}
-                  href={`/tests/${a.test_id}`}
+                  href={`/${a.test_id}`}
                   className="rounded-lg border border-gray-200 bg-white p-4 hover:border-teal-400 hover:shadow"
                 >
                   <p className="font-medium">{testInfo?.title ?? "Test"}</p>
@@ -217,7 +217,7 @@ export default async function StudentDashboard() {
           <div className="mt-2 rounded-lg border-2 border-dashed border-gray-300 p-8 text-center">
             <p className="text-gray-500">
               No completed tests yet.{" "}
-              <Link href="/tests" className="text-teal-600 hover:underline">
+              <Link href="/" className="text-teal-600 hover:underline">
                 Browse tests
               </Link>{" "}
               to get started.
@@ -276,7 +276,7 @@ export default async function StudentDashboard() {
                       </td>
                       <td className="px-4 py-3 text-right">
                         <Link
-                          href={`/tests/${a.test_id}/review?attempt=${a.id}`}
+                          href={`/${a.test_id}/review?attempt=${a.id}`}
                           className="text-sm text-teal-600 hover:underline"
                         >
                           Review

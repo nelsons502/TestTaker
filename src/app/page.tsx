@@ -57,7 +57,7 @@ export default async function TestBrowserPage(props: {
           </p>
         </div>
         <Link
-          href="/tests/dashboard"
+          href="/dashboard"
           className="text-sm text-gray-500 hover:text-gray-700"
         >
           Back to Dashboard
@@ -67,7 +67,7 @@ export default async function TestBrowserPage(props: {
       {/* Subject filter */}
       <div className="mt-6 flex flex-wrap gap-2">
         <Link
-          href="/tests"
+          href="/"
           className={`rounded-full px-3 py-1 text-sm font-medium ${
             !searchParams.subject
               ? "bg-teal-600 text-white"
@@ -79,7 +79,7 @@ export default async function TestBrowserPage(props: {
         {subjects.map((subject) => (
           <Link
             key={subject}
-            href={`/tests?subject=${encodeURIComponent(subject)}`}
+            href={`/?subject=${encodeURIComponent(subject)}`}
             className={`rounded-full px-3 py-1 text-sm font-medium ${
               searchParams.subject === subject
                 ? "bg-teal-600 text-white"
@@ -101,7 +101,7 @@ export default async function TestBrowserPage(props: {
           {tests.map((test) => (
             <Link
               key={test.id}
-              href={`/tests/${test.id}`}
+              href={`/${test.id}`}
               className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:border-teal-400 hover:shadow"
             >
               <div className="flex items-start justify-between">

@@ -7,10 +7,7 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match /tests routes only — don't interfere with the main site.
-     * Excludes static files and images.
-     */
-    "/tests/:path*",
+    // Match all routes except static files
+    "/((?!_next/static|_next/image|favicon.ico).*)",
   ],
 };

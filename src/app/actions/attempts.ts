@@ -36,7 +36,7 @@ export async function startAttempt(testId: string) {
     .single<{ id: string }>();
 
   if (existing) {
-    redirect(`/tests/${testId}/take?attempt=${existing.id}`);
+    redirect(`/${testId}/take?attempt=${existing.id}`);
   }
 
   // Fetch sections, questions, and options to build randomized orders
@@ -100,10 +100,10 @@ export async function startAttempt(testId: string) {
     .single<{ id: string }>();
 
   if (error) {
-    redirect(`/tests/${testId}?error=${encodeURIComponent(error.message)}`);
+    redirect(`/${testId}?error=${encodeURIComponent(error.message)}`);
   }
 
-  redirect(`/tests/${testId}/take?attempt=${attempt.id}`);
+  redirect(`/${testId}/take?attempt=${attempt.id}`);
 }
 
 export async function saveResponse(
@@ -143,7 +143,7 @@ export async function submitAttempt(testId: string, attemptId: string) {
     .returns<{ id: string }[]>();
 
   if (!sections || sections.length === 0) {
-    redirect(`/tests/${testId}?error=No+sections+found`);
+    redirect(`/${testId}?error=No+sections+found`);
   }
 
   const sectionIds = sections.map((s) => s.id);
@@ -163,7 +163,7 @@ export async function submitAttempt(testId: string, attemptId: string) {
     >();
 
   if (!questions) {
-    redirect(`/tests/${testId}?error=No+questions+found`);
+    redirect(`/${testId}?error=No+questions+found`);
   }
 
   const mcTfQuestionIds = questions
@@ -243,8 +243,8 @@ export async function submitAttempt(testId: string, attemptId: string) {
     })
     .eq("id", attemptId);
 
-  revalidatePath(`/tests/${testId}`);
-  redirect(`/tests/${testId}/review?attempt=${attemptId}`);
+  revalidatePath(`/${testId}`);
+  redirect(`/${testId}/review?attempt=${attemptId}`);
 }
 
 export async function gradeEssay(

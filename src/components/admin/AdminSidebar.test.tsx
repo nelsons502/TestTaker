@@ -4,7 +4,7 @@ import { AdminSidebar } from "./AdminSidebar";
 
 // Mock next/navigation
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/tests/admin/tests",
+  usePathname: () => "/admin/tests",
 }));
 
 // Mock next/link

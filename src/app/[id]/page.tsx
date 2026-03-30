@@ -89,7 +89,7 @@ export default async function TestDetailPage(props: {
   return (
     <div className="mx-auto max-w-2xl px-4 py-8">
       <Link
-        href="/tests"
+        href="/"
         className="text-sm text-gray-500 hover:text-gray-700"
       >
         &larr; Back to Tests
@@ -161,7 +161,7 @@ export default async function TestDetailPage(props: {
             {pastAttempts.map((attempt) => (
               <Link
                 key={attempt.id}
-                href={`/tests/${params.id}/review?attempt=${attempt.id}`}
+                href={`/${params.id}/review?attempt=${attempt.id}`}
                 className="flex items-center justify-between rounded-md border border-gray-100 p-3 hover:bg-gray-50"
               >
                 <div className="text-sm">

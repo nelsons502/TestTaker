@@ -34,7 +34,7 @@ describe("StartTestButton", () => {
     );
     const resumeLink = screen.getByText("Resume Test") as HTMLAnchorElement;
     expect(resumeLink.getAttribute("href")).toBe(
-      "/tests/test-1/take?attempt=attempt-1"
+      "/test-1/take?attempt=attempt-1"
     );
   });
 });

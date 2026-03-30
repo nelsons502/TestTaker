@@ -14,6 +14,6 @@ export async function requireAdmin() {
     .eq("id", user.id)
     .single<{ role: string }>();
 
-  if (profile?.role !== "admin") redirect("/tests/dashboard");
+  if (profile?.role !== "admin") redirect("/dashboard");
   return { supabase, user };
 }
