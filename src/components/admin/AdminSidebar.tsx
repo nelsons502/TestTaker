@@ -48,8 +48,14 @@ export function AdminSidebar({ fullName }: { fullName: string | null }) {
           {fullName || "Admin"}
         </p>
         <Link
-          href="/auth/sign-out"
+          href="/dashboard"
           className="mt-2 block text-sm text-gray-500 hover:text-gray-700"
+        >
+          Student View
+        </Link>
+        <Link
+          href="/auth/sign-out"
+          className="mt-1 block text-sm text-gray-500 hover:text-gray-700"
         >
           Sign out
         </Link>
