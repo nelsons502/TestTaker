@@ -10,6 +10,12 @@ export async function updateSession(request: NextRequest) {
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      // cookieOptions threads the domain through supabase's *internal* cookie
+      // ops (e.g. clearing stale tokens). Without it, supabase issues
+      // Set-Cookie deletes scoped to the host while the live cookies are
+      // scoped to .focus-coding.com — leaving stale cookies and breaking the
+      // cross-subdomain session that's set on focus-coding.com.
+      cookieOptions: cookieDomain ? { domain: cookieDomain } : undefined,
       cookies: {
         getAll() {
           return request.cookies.getAll();
@@ -20,10 +26,7 @@ export async function updateSession(request: NextRequest) {
           );
           supabaseResponse = NextResponse.next({ request });
           cookiesToSet.forEach(({ name, value, options }) =>
-            supabaseResponse.cookies.set(name, value, {
-              ...options,
-              ...(cookieDomain && { domain: cookieDomain }),
-            })
+            supabaseResponse.cookies.set(name, value, options)
           );
         },
       },
